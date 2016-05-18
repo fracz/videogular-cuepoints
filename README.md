@@ -35,8 +35,8 @@ For example, [Videogular's example 2](http://www.videogular.com/examples/control
 		<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
 		<vg-scrub-bar>
 			<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-			<vg-cuepoints vg-cuepoints-config="controller.config.plugins.cuepoints"
-						  vg-cuepoints-theme="controller.config.plugins.cuepoints.theme.url">
+			<vg-cuepoints cuepoints="[{ time: 18 },	{ time: 60 }]"
+						  theme="bower_components/videogular-cuepoints/cuepoints.css">
 			</vg-cuepoints>
 		</vg-scrub-bar>
 		<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
@@ -50,23 +50,6 @@ For example, [Videogular's example 2](http://www.videogular.com/examples/control
 	</vg-controls>
 </videogular>
 ...
-```
-
-With the following added to your `$scope.config` object:
-
-```js
-plugins: {
-	cuepoints: {
-		theme: {
-			url: "bower_components/videogular-cuepoints/cuepoints.css",
-				// Replace with the path appropriate to your project
-		},
-		points: [
-			{ time: 18 },
-			{ time: 60 },
-		],
-	},
-},
 ```
 
 [A complete example can be found here.][example]

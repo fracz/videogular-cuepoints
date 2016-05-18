@@ -11,8 +11,8 @@
                         return attrs.templateUrl || 'videogular-cuepoints/cuepoints.html';
                     },
                     scope: {
-                        cuepoints: '=vgCuepointsConfig',
-                        theme: '=vgCuepointsTheme',
+                        cuepoints: '=',
+                        theme: '@',
                     },
                     link: function ($scope, elem, attr, API) {
                         // shamelessly stolen from part of videogular's updateTheme function
@@ -46,7 +46,7 @@
             }])
         .run(['$templateCache', function ($templateCache) {
             $templateCache.put('videogular-cuepoints/cuepoints.html',
-                '<vg-cuepoint ng-repeat="cuepoint in cuepoints.points" ng-click="onCuepointClick(cuepoint)" ng-style="cuepointStyle(cuepoint)"></vg-cuepoint>'
+                '<vg-cuepoint ng-repeat="cuepoint in cuepoints" ng-click="onCuepointClick(cuepoint)" ng-style="cuepointStyle(cuepoint)"></vg-cuepoint>'
             );
         }]);
 })();
